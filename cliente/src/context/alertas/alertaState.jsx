@@ -10,12 +10,12 @@ const AlertaState = (props) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const mostrarAlerta = (msg, categoria) => {
+  const mostrarAlerta = (alerta) => {
     dispatch({
       type: MOSTRAR_ALERTA,
       payload: {
-        msg,
-        categoria,
+        msg: alerta.msg,
+        categoria: alerta.categoria
       },
     });
     setTimeout(() => {

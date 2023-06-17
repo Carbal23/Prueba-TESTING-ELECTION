@@ -1,11 +1,9 @@
 import React, { useContext, useEffect } from "react";
-import { SideBar } from "../layout/SideBar";
 import { Header } from "../layout/Header";
-import { FormTareas } from "../tareas/FormTareas";
-import { ListadoTareas } from "../tareas/ListadoTareas";
 import AuthContext from "../../context/auth/authContext";
+import { NuevoForm } from "./NuevoForm";
 
-export const Proyectos = () => {
+export const ContainerForm = () => {
 
   const authContext = useContext(AuthContext);
   const { usuarioAutenticado } = authContext;
@@ -16,13 +14,11 @@ export const Proyectos = () => {
 
   return (
     <div className="contenedor-app">
-      <SideBar />
       <div className="seccion-principal">
         <Header />
         <main>
-          <FormTareas />
+          <NuevoForm/>
           <div className="contenedor-tareas">
-            <ListadoTareas />
           </div>
         </main>
       </div>

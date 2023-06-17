@@ -1,19 +1,24 @@
 const mongoose = require("mongoose");
 
-const UsuarioSchema = mongoose.Schema({
-    name: {
+const CountySchema = mongoose.Schema({
+    codeCounty: {
         type: String,
         require: true,
         trim: true
     },
-    email: {
+    county: {
         type: String,
+        require: true,
+        trim: true
+    },
+    population: {
+        type: Number,
         require: true,
         trim: true,
         unique: true
     },
-    password: {
-        type: String,
+    area: {
+        type: Number,
         require: true,
         trim: true,
     },
@@ -24,4 +29,4 @@ const UsuarioSchema = mongoose.Schema({
 
 })
 
-module.exports = mongoose.model("usuario",UsuarioSchema);
+module.exports = mongoose.model("county",CountySchema);

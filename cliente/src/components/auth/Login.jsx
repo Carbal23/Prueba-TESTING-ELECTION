@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../../context/auth/authContext";
 import AlertaContext from "../../context/alertas/alertaContext";
 
@@ -79,13 +79,10 @@ export const Login = () => {
             <input
               type="submit"
               value="iniciar seccion"
-              className="btn btn-primary btn-block"
+              className="btn btn-primario btn-block"
             />
           </div>
         </form>
-        <Link to="/register" className="enlace-cuenta">
-          Registrate
-        </Link>
       </div>
     </div>
   );

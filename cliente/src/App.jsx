@@ -1,10 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Login } from "./components/auth/Login";
-import { Register } from "./components/auth/Register";
-import { Proyectos } from "./components/proyectos/proyectos";
 import tokenAuth from "./config/tokenAuth";
 import AuthContext from "./context/auth/authContext";
+import { ContainerForm } from "./components/form/ContainerForm";
 
 function App() {
   const authContext = useContext(AuthContext);
@@ -24,7 +23,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Login />} />
-        <Route exact path="/register" element={<Register />} />
         <Route
           exact
           path="/proyectos"
@@ -32,7 +30,7 @@ function App() {
             !autenticado ? (
               <Navigate to="/" replace />
             ) : (
-              <Proyectos />
+              <ContainerForm />
             )
           }
         />

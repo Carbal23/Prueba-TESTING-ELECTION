@@ -3,14 +3,11 @@ import {
   LOGIN_ERROR,
   LOGIN_EXITOSO,
   OBTENER_USUARIO,
-  REGISTRO_ERROR,
-  REGISTRO_EXITOSO,
 } from "../../types";
 
 const reducer = (state, action) => {
   switch (action.type) {
     case LOGIN_EXITOSO:
-    case REGISTRO_EXITOSO:
       localStorage.setItem("TOKEN", action.payload.token);
       return {
         ...state,
@@ -30,7 +27,6 @@ const reducer = (state, action) => {
 
     case CERRAR_SESION:
     case LOGIN_ERROR:
-    case REGISTRO_ERROR:
       localStorage.removeItem("TOKEN");
       return {
         ...state,

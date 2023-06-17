@@ -1,13 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authContext";
-import proyectoContext from "../../context/proyectos/proyectoContext";
+import proyectoContext from "../../context/Form/formContext";
 
 export const Header = () => {
   const authContext = useContext(AuthContext);
   const { usuario, usuarioAutenticado, cerrarSesion } = authContext;
-
-  const ProyectoContext = useContext(proyectoContext);
-  let { proyecto } = ProyectoContext;
 
   useEffect(() => {
     usuarioAutenticado();
